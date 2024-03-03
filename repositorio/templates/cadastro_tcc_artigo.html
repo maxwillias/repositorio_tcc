@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>SDATCC - Cadastro de TCC</title>
+{% endblock %}
+
+{% block content %}
+<div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">Formulário de TCC/Artigo</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/cadastro_tcc_artigo" method="post">
+                        <div class="form-group">
+                            <label for="tcc">Título:</label>
+                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Digite o título do TCC/Artigo">
+                        </div>
+                        <div class="form-group">
+                            <label for="autor">Autor:</label>
+                            <input type="text" name="autor" class="form-control" id="autor" placeholder="Digite o nome do autor">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo:</label>
+                            <select name="tipo" class="form-control" id="tipo">
+                                <option value="TCC">TCC</option>
+                                <option value="Artigo">Artigo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="orientador">Orientador:</label>
+                            <select name="orientador" class="form-control" id="orientador">
+                                <option value="Raphael">Raphael</option>
+                                <option value="Danilo">Danilo</option>
+                                <option value="Adriano">Adriano</option>
+                                <option value="Joselice">Joselice</option>
+                                <option value="Cleiane">Cleiane</option>
+                                <option value="Pêtronio">Pêtronio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="data_apresentacao">Data de Apresentação:</label>
+                            <input name="data_apresentacao" type="date" class="form-control" id="data-apresentacao">
+                        </div>
+                        <div class="form-group text-center">
+                            <a class="btn btn-primary mt-3" href="/cadastro">Voltar</a>
+                            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer%}
+{% endblock %}
