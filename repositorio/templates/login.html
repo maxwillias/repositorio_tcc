@@ -13,14 +13,14 @@
                     <h4 class="text-center">Login</h4>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="/login" method="post">
                         <div class="form-group">
                             <label for="usuario">Usuário:</label>
-                            <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
+                            <input name="usuario" type="text" class="form-control" id="usuario" placeholder="Digite seu usuário" required>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha:</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                            <input name="senha" type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
                         </div>
                         <div class="form-group text-center">
                             <a class="btn btn-primary mt-3" href="/">Voltar</a>

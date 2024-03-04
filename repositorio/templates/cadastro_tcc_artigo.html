@@ -16,11 +16,11 @@
                     <form action="/cadastro_tcc_artigo" method="post">
                         <div class="form-group">
                             <label for="tcc">Título:</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Digite o título do TCC/Artigo">
+                            <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Digite o título do TCC/Artigo" required>
                         </div>
                         <div class="form-group">
                             <label for="autor">Autor:</label>
-                            <input type="text" name="autor" class="form-control" id="autor" placeholder="Digite o nome do autor">
+                            <input type="text" name="autor" class="form-control" id="autor" placeholder="Digite o nome do autor" required>
                         </div>
                         <div class="form-group">
                             <label for="tipo">Tipo:</label>
@@ -42,10 +42,10 @@
                         </div>
                         <div class="form-group">
                             <label for="data_apresentacao">Data de Apresentação:</label>
-                            <input name="data_apresentacao" type="date" class="form-control" id="data-apresentacao">
+                            <input name="data_apresentacao" type="date" class="form-control" id="data-apresentacao" required>
                         </div>
                         <div class="form-group text-center">
-                            <a class="btn btn-primary mt-3" href="/cadastro">Voltar</a>
+                            <a class="btn btn-primary mt-3" href="/login">Voltar</a>
                             <button type="submit" class="btn btn-primary mt-3">Enviar</button>
                         </div>
                     </form>

@@ -25,15 +25,14 @@
                 <div class="col-xl-7">
                     <div class="text-center text-white">
                         <h1 class="mb-5">Procure o Artigo/TCC que desejar do IFNMG - Campús Januária</h1>
-                        <form class="form-subscribe">
+                        <form action="/listar_tcc_artigo" method="post" class="form-subscribe">
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control form-control-lg" type="text"
+                                    <input name="busca" class="form-control form-control-lg" type="text"
                                         placeholder="Digite o titulo, autor, orientador..." />
                                 </div>
                                 <div class="col-auto"><button class="btn btn-danger btn-lg"
                                         type="submit">Buscar</button></div>
-                                        <a class="btn btn-primary mt-3" href="/listar_tcc_artigo">Avançar</a>
                             </div>
                         </form>
                     </div>
