@@ -1,6 +1,7 @@
 from flask import render_template, request, url_for, redirect
 from repositorio import model
 from repositorio.model import db, tcc_artigo, Usuario
+from repositorio.ext.authentication import verify_login
 
 def init_app(app):
     app.add_url_rule("/", view_func=index, methods =['GET','POST'])
@@ -24,14 +25,15 @@ def index():
     return render_template("index.html")
 
 def login():
-    total = model.Usuario.query.all()
     if request.method == 'POST':
         usuario = request.form['usuario']
         senha = request.form['senha']
-        for i in total:
-            if senha == i.senha and usuario == i.nome_completo:
-                return redirect(url_for("cadastro_tcc_artigo"))
 
+        logado = verify_login(usuario, senha)
+
+        if logado:
+            return redirect(url_for("cadastro_tcc_artigo"))
+        
     return render_template("login.html")
 
 def cadastro_tcc_artigo():

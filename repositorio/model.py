@@ -1,5 +1,6 @@
 from repositorio.ext.database import db, Integer, String, Column
 from sqlalchemy_serializer import SerializerMixin
+from werkzeug.security import generate_password_hash
 
 class tcc_artigo(db.Model, SerializerMixin):
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -24,12 +25,9 @@ class Usuario(db.Model, SerializerMixin):
 
     def __init__(self, nome_completo, senha, data_nascimento):
         self.nome_completo = nome_completo
-        self.senha = senha
+        self.senha = generate_password_hash(senha)
         self.data_nascimento = data_nascimento
 
 
-class User(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(140))
-    password = db.Column(db.String(512))
-
+def get_user(user_id):
+    return Usuario.query.filter_by(id=user_id).first()
