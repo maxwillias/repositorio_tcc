@@ -16,15 +16,18 @@
                     <form action="/cadastro" method="post">
                         <div class="form-group">
                             <label for="tcc">Nome completo:</label>
-                            <input name="nome_completo" type="text" class="form-control" id="nome_completo" placeholder="Digite seu nome completo" required>
+                            <input name="nome_completo" type="text" class="form-control" id="nome_completo"
+                                placeholder="Digite seu nome completo" required>
                         </div>
                         <div class="form-group">
                             <label for="senha">Senha:</label>
-                            <input name="senha" type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+                            <input name="senha" type="password" class="form-control" id="senha"
+                                placeholder="Digite sua senha" required>
                         </div>
                         <div class="form-group">
                             <label for="data_nascimento">Data de Nascimento:</label>
-                            <input name="data_nascimento" type="date" class="form-control" id="data_nascimento" required>
+                            <input name="data_nascimento" type="date" class="form-control" id="data_nascimento"
+                                required>
                         </div>
                         <div class="form-group text-center">
                             <a class="btn btn-primary mt-3" href="/login">Voltar</a>
@@ -36,6 +39,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('data_nascimento').setAttribute('max', today);
+</script>
 
 {% endblock %}
 

@@ -33,6 +33,8 @@ def login():
 
         if logado:
             return redirect(url_for("cadastro_tcc_artigo"))
+        else:
+            flash({'title': "Falha no login!", 'message': "Usuário ou senha inválido!"}, 'error')
         
     return render_template("login.html")
 
@@ -43,7 +45,6 @@ def cadastro_tcc_artigo():
         db.session.add(arquivo)
         db.session.commit()
         flash({'title': "Sucesso!", 'message': "Salvo com sucesso!"}, 'info')
-        #return redirect(url_for("listar_tcc_artigo"))
 
     return render_template("cadastro_tcc_artigo.html")
 
