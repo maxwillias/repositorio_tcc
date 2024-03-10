@@ -1,4 +1,4 @@
-from flask import render_template, request, url_for, redirect
+from flask import render_template, request, url_for, redirect, flash
 from repositorio import model
 from repositorio.model import db, tcc_artigo, Usuario
 from repositorio.ext.authentication import verify_login
@@ -42,7 +42,8 @@ def cadastro_tcc_artigo():
         arquivo = tcc_artigo(request.form['titulo'],request.form['autor'],request.form['tipo'],request.form['orientador'],request.form['data_apresentacao'])
         db.session.add(arquivo)
         db.session.commit()
-        return redirect(url_for("listar_tcc_artigo"))
+        flash({'title': "Sucesso!", 'message': "Salvo com sucesso!"}, 'info')
+        #return redirect(url_for("listar_tcc_artigo"))
 
     return render_template("cadastro_tcc_artigo.html")
 
@@ -52,6 +53,7 @@ def cadastro():
         usuario = Usuario(request.form['nome_completo'],request.form['senha'],request.form['data_nascimento'])
         db.session.add(usuario)
         db.session.commit()
+        flash({'title': "Sucesso!", 'message': "Cadastro realizado com sucesso!"}, 'info')
         return redirect(url_for("cadastro_tcc_artigo"))
 
     return render_template("cadastro.html")

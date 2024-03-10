@@ -46,7 +46,10 @@
                         </div>
                         <div class="form-group text-center">
                             <a class="btn btn-primary mt-3" href="/login">Voltar</a>
-                            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                            <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Finalizar
+                              </button>
                         </div>
                     </form>
                 </div>
@@ -54,6 +57,24 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Finalizar Cadastro?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Tem certeza de deseja finalizar o cadastro de TCCs/Artigos?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          <a type="button" class="btn btn-primary" href="listar_tcc_artigo">Sim</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
 

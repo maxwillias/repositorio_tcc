@@ -5,7 +5,33 @@
 {% endblock %}
 
 {% block content %}
-{{ super() }}
+<nav class="navbar static-top">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/">SDATCC</a>
+        <a class="btn btn-danger" href="/login">Login</a>
+    </div>
+</nav>
+<header>
+    <div class="container position-absolute top-50 start-50 translate-middle">
+        <div class="row justify-content-center">
+            <div class="col-xl-7">
+                <div class="text-center text-white">
+                    <h1 class="mb-5">Procure o Artigo/TCC que desejar do IFNMG - Campus Januária</h1>
+                    <form action="/listar_tcc_artigo" method="post" class="form-subscribe">
+                        <div class="row">
+                            <div class="col">
+                                <input name="busca" class="form-control form-control-lg" type="text"
+                                    placeholder="Digite o titulo, autor, orientador..." />
+                            </div>
+                            <div class="col-auto"><button class="btn btn-danger btn-lg" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 {% endblock %}
 
 {% block footer%}
